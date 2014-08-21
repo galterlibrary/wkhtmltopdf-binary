@@ -5,10 +5,8 @@ arch = case RUBY_PLATFORM
     'linux-amd64'
   when /linux/
     'linux-x86'
-  when /darwin/
-    'darwin-x86'
   else
-    raise "Invalid platform. Must be running linux or intel-based Mac OS."
+    raise 'Invalid platform. Must be running 64 bit linux or intel-based Mac OS.'
 end
 
 args = $*.map { |x| x.include?(' ') ? "'" + x + "'" : x }
